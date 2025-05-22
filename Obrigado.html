@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centro de Formação</title>
+    <!-- 4049 -->
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body,
+        nav,
+        .sidenav {
+            font-family: 'Poppins', sans-serif;
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+        }
+
+        nav {
+            background: #fff;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid gainsboro;
+        }
+
+        nav .brand-logo,
+        nav ul a,
+        .sidenav a {
+            color: #222 !important;
+            font-weight: 600;
+        }
+
+        .nav-wrapper {
+            padding: 0 24px;
+        }
+
+        .notification-btn {
+            position: relative;
+            margin-right: 16px;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: 8px;
+            right: 6px;
+            background: #e53935;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 10px;
+            padding: 2px 5px;
+            line-height: 1;
+        }
+
+        @media (max-width: 992px) {
+            .nav-wrapper {
+                padding: 0 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+   <div style="display: flex; width: 100%; height: 100vh; align-items: center; justify-content: center;">
+     <div class="container">
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                <div class="card-panel">
+                    <div class="logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100">
+                            <circle cx="12" cy="12" r="10" fill="#007bff"/>
+                            <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8A8.009 8.009 0 0 1 12 20z" fill="#fff"/>
+                        </svg>
+                    </div>
+                    <h2>Obrigado!</h2>
+                    <p>Obrigado por se inscrever e preencher todas as informações enviaremos uma mensagem assim que a nossa equipe terminar de avaliar suas informações.</p>
+                    <br>
+                    <a href="#!" class="btn back-btn">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+        });
+    </script>
+</body>
+
+</html>

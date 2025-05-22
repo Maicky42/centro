@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centro de Formação</title>
+    <!-- 4049 -->
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body,
+        nav,
+        .sidenav {
+            font-family: 'Poppins', sans-serif;
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+        }
+
+        nav {
+            background: #fff;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid gainsboro;
+        }
+
+        nav .brand-logo,
+        nav ul a,
+        .sidenav a {
+            color: #222 !important;
+            font-weight: 600;
+        }
+
+        .nav-wrapper {
+            padding: 0 24px;
+        }
+
+        .notification-btn {
+            position: relative;
+            margin-right: 16px;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: 8px;
+            right: 6px;
+            background: #e53935;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 10px;
+            padding: 2px 5px;
+            line-height: 1;
+        }
+
+        @media (max-width: 992px) {
+            .nav-wrapper {
+                padding: 0 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/244972960569" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+        <i class="material-icons" style="font-size:32px; color:#25d366;">whatsapp</i>
+    </a>
+
+
+    <!-- Modal Structure -->
+    <div id="notification" class="modal" style="border-radius: .1rem; max-width: 400px; padding: 20px;">
+        <div class="modal-content" style="padding-bottom: 0;"></div>
+        <h4 style="margin-bottom: 20px; color: #003eff;">Notificações</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;"></ul>
+        <li
+            style="display: flex; align-items: flex-start; margin-bottom: 16px; background: #f5f7fa; border-radius: 8px; padding: 12px;">
+            <i class="material-icons" style="color: #003eff; margin-right: 10px;">info</i>
+            <div
+                style="width: 100%; display: flex; flex-direction: column; padding-bottom: 10px; border-bottom: 1px solid gainsboro;">
+                <span style="font-weight: 600;">Notificação 1:</span>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, exercitationem.</span>
+            </div>
+        </li>
+        <li
+            style="display: flex; align-items: flex-start; margin-bottom: 16px; background: #f5f7fa; border-radius: 8px; padding: 12px;">
+            <i class="material-icons" style="color: #003eff; margin-right: 10px;">info</i>
+            <div
+                style="width: 100%; display: flex; flex-direction: column; padding-bottom: 10px; border-bottom: 1px solid gainsboro;">
+                <span style="font-weight: 600;">Notificação 1:</span>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, exercitationem.</span>
+            </div>
+        </li>
+        <li
+            style="display: flex; align-items: flex-start; margin-bottom: 16px; background: #f5f7fa; border-radius: 8px; padding: 12px;">
+        </li>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var modals = document.querySelectorAll('.modal');
+            M.Modal.init(modals);
+
+            var notificationBtn = document.querySelector('.notification-btn');
+            var notificationModal = M.Modal.getInstance(document.getElementById('notification'));
+            if (notificationBtn && notificationModal) {
+                notificationBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    notificationModal.open();
+                });
+            }
+        });
+    </script>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo" style="color: #002e86">Logo</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger" style="color: black;"><i
+                    class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="#perfil-aluno">Página Inicial</a>
+                </li>
+                <li>
+                    <a href="#perfil-aluno">Informações</a>
+                </li>
+                <li>
+                    <a href="#perfil-aluno">Contacto</a>
+                </li>
+                <li>
+                    <a href="#!" class="notification-btn">
+                        <i class="material-icons">notifications</i>
+                        <span class="notification-badge">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#perfil-aluno">
+                        <i class="material-icons left">account_circle</i>
+                        Perfil do Aluno
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <a href="#!">
+                <i class="material-icons">notifications</i>Notificações
+            </a>
+        </li>
+        <li>
+            <a href="#perfil-aluno">
+                <i class="material-icons left">mail_outline</i>Contacto
+            </a>
+        </li>
+        <li>
+            <a href="#perfil-aluno">
+                <i class="material-icons left">info</i>Informações
+            </a>
+        </li>
+        <li>
+            <a href="#perfil-aluno">
+                <i class="material-icons left">account_circle</i>Perfil do Aluno
+            </a>
+        </li>
+    </ul>
+    <main>
+        <div class="contain" style="border-bottom: 1px solid gainsboro;">
+            <div class="conteudo">
+                <h2>Seja Bem vindo ao nosso Centro</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim molestiae temporibus vitae
+                        dignissimos exercitationem quasi ad cupiditate impedit necessitatibus totam!</p>
+                    <br>
+                    <div class="link">
+                        <a href="#!" class="btn back-btn" style="background-color: #003eff; box-shadow: none;">Saber
+                            mais</a>
+                    </div>
+            </div>
+            <div class="image rotate-on-hover">
+                <img src="image/+244_932_656_576__6_-removebg-preview.png" alt="" width="650px" style="max-width: 98%;">
+            </div>
+            <style>
+                .rotate-on-hover img {
+                    transition: transform 0.5s cubic-bezier(.4, 2, .6, 1);
+                }
+
+                .rotate-on-hover:hover img {
+                    transform: rotate(18deg);
+                }
+            </style>
+        </div>
+        <!-- seção missão & valor -->
+
+        <section class="mission">
+            <div class="contains" style="border-left: 10px solid orange;">
+                <h4 style="color: orange;">Nossa Missão</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum itaque id facilis quo molestiae
+                    tempora sed libero, obcaecati delectus neque similique molestias eveniet harum dolorum excepturi et
+                    mollitia dolores totam provident! Quasi sint odit fugit ad aut rem nostrum sunt.</p>
+                <div class="link"></div>
+            </div>
+            <div class="contains" style="border-left: 10px solid #ec2f25;">
+                <h4 style="color: #ec2f25;">Nossa Visão</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa incidunt voluptatem dolor similique et
+                    repellendus totam, hic temporibus nam in nihil placeat modi error accusantium neque quibusdam odit
+                    facilis eos nostrum omnis. Iure officiis accusamus illo unde aliquid voluptatem eaque? </p>
+            </div>
+        </section>
+
+        <div class="barra"></div>
+
+        <section class="theme section">
+            <div style="width: 600px; text-align: center; max-width: 98%;">
+                <h4>OBjectivos</h4>
+                <p style="font-size: 1.0rem; color: #444; padding: 0 30px;">
+                    Buscamos inspirar, transformar e capacitar nossos alunos, promovendo valores de ética, inovação e
+                    excelência em educação.
+                </p>
+            </div>
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <i class="material-icons" style="color: #003eff; font-size: 40px;">verified</i>
+                    <h5>Qualidade</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim molestiae temporibus vitae
+                        dignissimos exercitationem quasi ad cupiditate impedit necessitatibus totam!</p> <br>
+                </div>
+            </div>
+            <div class="card" style="background-color: #003eff; color: #fff;">
+                <div class="card-content">
+                    <i class="material-icons" style="color: #fff; font-size: 40px;">lightbulb</i>
+                    <h5 style="color: #fff;">Inovação</h5>
+                    <p style="color: #fff;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim molestiae
+                        temporibus vitae dignissimos exercitationem quasi ad cupiditate impedit necessitatibus totam!
+                    </p> <br>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <i class="material-icons" style="color: #003eff; font-size: 40px;">autorenew</i>
+                    <h5>Mudança</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim molestiae temporibus vitae
+                        dignissimos exercitationem quasi ad cupiditate impedit necessitatibus totam!</p><br>
+                </div>
+            </div>
+        </section>
+
+        <section class="theme section">
+            <div style="width: 600px; text-align: center; max-width: 98%;">
+                <h4>Cursos</h4>
+                <p style="font-size: 1.0rem; color: #444; padding: 0 30px;">
+                    Nosso objetivo é proporcionar uma formação de excelência, preparando nossos alunos para os desafios
+                    do futuro com conhecimento, ética e inovação.
+                    <br><br>
+                    <a href="#!" class="btn" style="background-color: #003eff; box-shadow: none;">Ver mais cursos</a>
+                </p>
+            </div>
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <div class="card-image">
+                    <img src="image/image (2).jfif" alt="" width="100%" style="filter: brightness(60%);">
+                    <span class="card-title">Programação</span>
+                </div>
+                <div class="card-content">
+                    <h5>Formação</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim molestiae temporibus vitae
+                        dignissimos exercitationem quasi ad cupiditate impedit necessitatibus totam!</p> <br>
+                    <a href="#!" class="btn back-btn" style="background-color: #003eff; box-shadow: none;">Saber
+                        mais</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="image/image (2).jfif" alt="" width="100%" style="filter: brightness(60%);">
+                    <span class="card-title">Excel avanaçado</span>
+                </div>
+                <div class="card-content">
+                    <h5>Formação</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim molestiae temporibus vitae
+                        dignissimos exercitationem quasi ad cupiditate impedit necessitatibus totam!</p> <br>
+                    <a href="#!" class="btn back-btn" style="background-color: #003eff; box-shadow: none;">Saber
+                        mais</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="image/image (2).jfif" alt="" width="100%" style="filter: brightness(60%);">
+                    <span class="card-title">Contabilidade</span>
+                </div>
+                <div class="card-content">
+                    <h5>Formação</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim molestiae temporibus vitae
+                        dignissimos exercitationem quasi ad cupiditate impedit necessitatibus totam!</p><br>
+                    <a href="#!" class="btn back-btn" style="background-color: #003eff; box-shadow: none;">Saber
+                        mais</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #011b4d; color: #fff; padding: 40px 0 0 0;">
+        <div class="container" style="max-width: 900px;">
+            <div class="row">
+                <div class="col s12 m6">
+                    <h5 style="font-weight:600;">Centro de Formação</h5>
+                    <p style="color:#e0e0e0;">Inspirando, transformando e capacitando alunos para o futuro.</p>
+                    <p style="margin-top: 20px;">
+                        <i class="material-icons tiny" style="vertical-align:middle;">email</i>
+                        admin@centroformacao.com
+                    </p>
+                    <p>
+                        <i class="material-icons tiny" style="vertical-align:middle;">phone</i>
+                        +244 932 656 576
+                    </p>
+                </div>
+                <div class="col s12 m6">
+                    <h5 style="font-weight:600;">Fale com o Admin</h5>
+                    <form id="footer-contact-form">
+                        <div class="input-field" style="margin-bottom: 10px;">
+                            <input id="footer_email" name="email" type="email" class="validate white-text" required
+                                style="color:#fff;">
+                            <label for="footer_email" style="color:#fff;">Seu Email</label>
+                        </div>
+                        <div class="input-field" style="margin-bottom: 10px;">
+                            <textarea id="footer_message" name="message" class="materialize-textarea white-text"
+                                required style="color:#fff;"></textarea>
+                            <label for="footer_message" style="color:#fff;">Mensagem</label>
+                        </div>
+                        <button type="submit" class="btn"
+                            style="background:#ff9800; color:#fff; box-shadow:none;">Enviar</button>
+                        <span id="footer-form-status" style="margin-left:10px; font-size:0.95em;"></span>
+                    </form>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom:0; padding: 20px 0;">
+                <div class="col s12"
+                    style="border-top:1px solid #304ffe; margin-top:30px; padding-top:15px; text-align:center; color:#bdbdbd;">
+                    &copy; 2024 Centro de Formação. Todos os direitos reservados.
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById('footer-contact-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                // Simulação de envio (substitua por integração real)
+                document.getElementById('footer-form-status').textContent = 'Mensagem enviada!';
+                this.reset();
+                setTimeout(function () {
+                    document.getElementById('footer-form-status').textContent = '';
+                }, 3000);
+            });
+        </script>
+    </footer>
+    </div>
+
+
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                <div class="card-panel">
+                    <div class="logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100">
+                            <circle cx="12" cy="12" r="10" fill="#007bff"/>
+                            <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8A8.009 8.009 0 0 1 12 20z" fill="#fff"/>
+                        </svg>
+                    </div>
+                    <h2>Obrigado!</h2>
+                    <p>Obrigado por se inscrever no nosso curso! Estamos ansiosos para vê-lo em breve.</p>
+                    <a href="#!" class="btn back-btn">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+        });
+    </script>
+</body>
+
+</html>
